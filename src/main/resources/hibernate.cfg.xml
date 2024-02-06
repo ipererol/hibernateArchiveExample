@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuration of the database connection -->
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/archive</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!-- Database dialect configuration -->
+        <property name="dialect">org.hibernate.dialect.MariaDBDialect</property>
+
+        <!-- Configuration of the SQL query display mode -->
+        <property name="show_sql">true</property>
+
+        <!-- DDL generation configuration (create, update, validate, none) -->
+        <property name="hbm2ddl.auto">create</property>
+        <mapping class="org.example.model.Author"/>
+        <mapping class="org.example.model.Article"/>
+        <mapping class="org.example.model.Tag"/>
+    </session-factory>
+</hibernate-configuration>
